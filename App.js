@@ -2,10 +2,11 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import AppLoading from 'expo-app-loading';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import NavigationContainer from './src/navigation/Navigator';
 
-import Home from './src/pages/home/Home'
+import AppProvider from './src/context/Provider'
+
+
 
 const fetchFonts = () => {
   return Font.loadAsync({
@@ -15,7 +16,6 @@ const fetchFonts = () => {
 };
 
 
-const Stack = createNativeStackNavigator();
 export default function App() {
   const [fontLoaded, setFontLoaded] = useState(false);
 
@@ -28,16 +28,7 @@ export default function App() {
       />
     );
   }
-  return (<NavigationContainer>
-    <Stack.Navigator>
-      <Stack.Screen
-        name="Home"
-        component={Home}
-        options={{ title: 'Welcome' }}
-      />
-      {/* <Stack.Screen name="*" component={Home} /> */}
-    </Stack.Navigator>
-  </NavigationContainer>);
+  return (<AppProvider><NavigationContainer /></AppProvider>);
 }
 
 

@@ -2,22 +2,34 @@ import { StyleSheet } from 'react-native';
 import theme from '../../styles/theme.style';
 
 export default StyleSheet.create({
-    container: {
-        flex: 1,
-        paddingVertical: theme.CONTAINER_PADDING,
-        backgroundColor: theme.BACKGROUND_COLOR_LIGHT,
-        alignItems: 'center'
+    title: {
+        fontSize: 21,
+        textAlign: 'center',
+        paddingTop: 20,
+        fontWeight: '500',
     },
-    textAreaTitle: {
-        fontSize: theme.FONT_SIZE_MEDIUM,
-        alignSelf: 'flex-start',
-        padding: 10
+
+    subTitle: {
+        fontSize: 17,
+        textAlign: 'center',
+        paddingVertical: 20,
+        fontWeight: '500',
     },
-    textArea: {
-        flex: 1,
-        padding: theme.CONTAINER_PADDING,
-        alignSelf: 'stretch',
-        overflow: 'scroll',
-        backgroundColor: theme.BACKGROUND_COLOR_LIGHT
-    }
+
+    form: {
+        paddingTop: 20,
+    },
+
+    createSection: {
+        flexDirection: 'row',
+    },
+    linkBtn: {
+        paddingLeft: 17,
+        color: theme.PRIMARY_COLOR,
+        fontSize: 16,
+    },
+
+    infoText: {
+        fontSize: 17,
+    },
 });
