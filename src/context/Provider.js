@@ -1,11 +1,13 @@
 import React, { createContext, useReducer } from 'react';
-import authReducer from '../reducers/auth'
+import authReducer from '../store/reducers/auth'
 
 const initialAuthState = {
     isLoggedIn: false,
     user: null,
     error: null,
-    loading: false
+    loading: false,
+    txnId: null,
+    token: null
 }
 
 export const AppContext = createContext(initialAuthState)

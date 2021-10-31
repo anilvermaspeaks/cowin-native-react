@@ -3,8 +3,11 @@ import theme from '../../styles/theme.style';
 
 export default StyleSheet.create({
     container: {
-        paddingVertical: theme.CONTAINER_PADDING,
-        backgroundColor: theme.BACKGROUND_COLOR_LIGHT,
-        color: theme.PRIMARY_COLOR
+        margin: 20,
+        flex: 1
+    },
+    downloadLink: {
+        marginVertical: 40,
+
     }
 });

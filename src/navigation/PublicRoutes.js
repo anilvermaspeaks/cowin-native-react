@@ -1,17 +1,34 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import Login from '../pages/login/Login'
-
+import OTPGenerator from '../pages/login/OTP.generator'
+import ConfirmOTP from '../pages/login/ConfirmOTP';
+import theme from '../styles/theme.style';
 
 const Stack = createNativeStackNavigator();
 
-const publicRoutes = () => <Stack.Navigator>
+const publicRoutes = () => <Stack.Navigator initialRouteName="Auth" screenOptions={{
+    headerMode: 'screen',
+    headerTintColor: 'white',
+    headerStyle: { backgroundColor: theme.PRIMARY_BACKGROUND_COLOR }
+}}>
     <Stack.Screen
         name="Auth"
-        component={Login}
-        options={{ title: 'Login' }}
+        component={OTPGenerator}
+        options={{
+            title: 'Generate OTP'
+        }}
     />
+
+    <Stack.Screen
+        name="confirm-otp"
+        component={ConfirmOTP}
+        options={{
+            title: 'Confirm OTP'
+        }}
+    />
+
+
 </Stack.Navigator>
 
 

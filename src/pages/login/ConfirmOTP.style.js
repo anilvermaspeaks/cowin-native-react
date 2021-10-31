@@ -17,7 +17,8 @@ export default StyleSheet.create({
     },
 
     form: {
-        paddingTop: 20,
+        paddingVertical: 20,
+        paddingHorizontal: 30
     },
 
     createSection: {
